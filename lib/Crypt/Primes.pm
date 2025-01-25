@@ -1,14 +1,13 @@
-#!/usr/bin/perl -s
 ##
 ## Crypt::Primes -- Provable Prime Number Generator
 ##                  for Cryptographic Applications. 
 ##
-## Copyright (c) 1998-2000, Vipul Ved Prakash.  All rights reserved.
+## Copyright (c) 1998-2025, Vipul Ved Prakash.  All rights reserved.
 ## This code is free software; you can redistribute it and/or modify
 ## it under the same terms as Perl itself.
 ##
-## $Id: Primes.pm,v 0.49 2001/06/11 01:04:23 vipul Exp vipul $
-
+use strict;
+use warnings;
 package Crypt::Primes;
 require Exporter; 
 use vars qw($VERSION @EXPORT_OK);
@@ -21,7 +20,7 @@ use Math::Pari qw( PARI Mod floor sqrt);
 
 ## list of small primes for trial division.
 
-@PRIMES = qw( 
+our @PRIMES = qw( 
   2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97 101
 103 107 109 113 127 131 137 139 149 151 157 163 167 173 179 181 191 193  197
 199 211 223 227 229 233 239 241 251 257 263 269 271 277 281 283 293 307  311
@@ -664,7 +663,7 @@ sub trialdiv {
     my ( $n, $limit, $v ) = @_; 
 
     my $end = _trialdiv_limit ( $n, $limit );
-    for ( $i=0; $i <= $end; $i++ ) {
+    for ( my $i=0; $i <= $end; $i++ ) {
         return undef unless Math::Pari::gmod ( $n, $PRIMES[ $i ] );
     }
 
