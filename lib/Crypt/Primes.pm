@@ -753,7 +753,7 @@ Random numbers are gathered with Crypt::Random, a perl interface to
 
 =head1 FUNCTIONS
 
-The following functions are availble for import.  They must be explicitely
+The following functions are available for import.  They must be explicitly
 imported.
 
 =over 4
@@ -850,7 +850,7 @@ generator of the cyclic group Z*(2Rq).
 
 Crypt::Primes generates 512-bit primes in 7 seconds (on average), and
 1024-bit primes in 37 seconds (on average), on my PII 300 Mhz notebook.
-There are no computational limits by design; primes upto 8192-bits were
+There are no computational limits by design; primes up to 8192-bits were
 generated to stress test the code.  For detailed runtime analysis see [1].
 
 =head1 SEE ALSO
