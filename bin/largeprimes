@@ -9,6 +9,7 @@
 ##
 ## $Id$
 
+# VERSION
 
 use Crypt::Primes; 
 

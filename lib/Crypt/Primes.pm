@@ -16,7 +16,7 @@ use Math::Pari qw( PARI Mod floor sqrt);
 *import      = \&Exporter::import;
 
 @EXPORT_OK   = qw( maurer trialdiv rsaparams );
-( $VERSION ) = '$Revision: 0.50 $' =~ /(\d+\.\d+)/; 
+# VERSION
 
 ## list of small primes for trial division.
 
@@ -701,11 +701,6 @@ sub _trialdiv_limit {
 
 Crypt::Primes - Provable Prime Number Generator suitable for Cryptographic Applications.  
 
-=head1 VERSION
-
- $Revision: 0.49 $
- $Date: 2001/06/11 01:04:23 $
-
 =head1 SYNOPSIS
 
     # generate a random, provable 512-bit prime.
@@ -767,7 +762,7 @@ Following hash keys are understood:
 
 =back
 
-=over 0 
+=over
 
 =item B<Size>
 
