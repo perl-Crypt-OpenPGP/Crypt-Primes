@@ -1,0 +1,8 @@
+Crypt-Primes-*
+*.swp
+blib*
+.build
+Release*
+MYMETA.*
+Makefile
+pm_to_blib
