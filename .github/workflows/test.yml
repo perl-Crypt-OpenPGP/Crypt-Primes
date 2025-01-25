@@ -1,0 +1,39 @@
+name: Test
+
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - '*'
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        perl: [
+          '5.8',
+          '5.10', '5.12', '5.14', '5.16', '5.18',
+          '5.20', '5.22', '5.24', '5.26', '5.28',
+          '5.30', '5.32', '5.34', '5.36', '5.38',
+          '5.40',
+        ]
+
+    runs-on: ubuntu-latest
+
+    name: Perl ${{ matrix.perl }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shogo82148/actions-setup-perl@v1
+        with:
+          perl-version: ${{ matrix.perl }}
+
+      - run: cpm install --show-build-log-on-failure --no-prebuilt
+
+      - run: perl Makefile.PL
+
+      - run: make test
