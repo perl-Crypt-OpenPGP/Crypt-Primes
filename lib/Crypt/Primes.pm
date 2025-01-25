@@ -563,7 +563,8 @@ sub maurer {
     my ( %params ) = @_;
 
     my $k = $params { Size };         #-- bitsize of the required prime.
-    my $v = $params { Verbosity };    #-- process reporting verbosity.
+    my $v =
+        $params { Verbosity } || 0;   #-- process reporting verbosity.
                                       #-- whether to find intermediate generators.
     my $p0 = 20;                      #-- generate primes of bitsize less 
                                       #-- than $p0 with nextprime().
